@@ -1,0 +1,17 @@
+oauth2:
+  hashers:
+    algorithm: pbkdf2
+    pbkdf2:
+      iterations: 100
+
+secrets:
+  system:
+    - "000000000000000000000000000000000000000000000000"
+  cookie:
+    - "000000000000000000000000000000000000000000000000"
+
+urls:
+  self:
+    issuer: http://127.0.0.1:4444
+  login: http://127.0.0.1:3000/login
+  consent: http://127.0.0.1:3000/consent
