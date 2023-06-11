@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+gvm use go1.20
+
 killall hydra || true
 killall node || true
 
@@ -11,7 +13,7 @@ hydra serve all --config $HOME/openai-bench/hydra.config.yml  --dev &> $HOME/hyd
 export HYDRA_ADMIN_URL=http://127.0.0.1:4445
 npm run start &> $HOME/consent.log &
 
-sleep 10
+sleep 5
 
 client=$(hydra create client \
     --endpoint http://127.0.0.1:4445 \
