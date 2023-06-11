@@ -2,8 +2,8 @@
 
 set -euxo pipefail
 
-killall hydra
-killall node
+killall hydra || true
+killall node || true
 
 echo $DSN
 nohup hydra serve all --config $HOME/openai-bench/hydra.config.yml  --dev &> $HOME/hydra.log &
