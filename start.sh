@@ -11,7 +11,7 @@ hydra serve all --config $HOME/openai-bench/hydra.config.yml  --dev &> $HOME/hyd
 export HYDRA_ADMIN_URL=http://127.0.0.1:4445
 npm run start &> $HOME/consent.log &
 
-wait 10
+sleep 10
 
 client=$(hydra create client \
     --endpoint http://127.0.0.1:4445 \
@@ -29,7 +29,7 @@ hydra perform authorization-code \
     --port 5555 \
     --scope openid --scope offline --no-shutdown &> $HOME/client.log &
 
-wait 2
+sleep 2
 
 curl http://127.0.0.1:5555
 
