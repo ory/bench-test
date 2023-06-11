@@ -6,6 +6,7 @@ set -euxo pipefail
 killall hydra || true
 killall node || true
 
+which gvm
 gvm use go1.20
 
 echo $DSN
