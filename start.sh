@@ -7,7 +7,7 @@ killall hydra || true
 killall node || true
 
 echo $DSN
-hydra serve all --config $HOME/openai-bench/hydra.config.yml  --dev &> $HOME/hydra.log &
+hydra serve all --config $HOME/bench-test/hydra.config.yml  --dev &> $HOME/hydra.log &
 
 export HYDRA_ADMIN_URL=http://127.0.0.1:4445
 npm run start &> $HOME/consent.log &

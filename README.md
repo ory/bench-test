@@ -1,1 +1,1 @@
-# openai-bench
+# SQL Throughput Benchmarking for Ory Hydra
