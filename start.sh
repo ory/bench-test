@@ -6,10 +6,10 @@ killall hydra || true
 killall node || true
 
 echo $DSN
-nohup hydra serve all --config $HOME/openai-bench/hydra.config.yml  --dev &> $HOME/hydra.log &
+hydra serve all --config $HOME/openai-bench/hydra.config.yml  --dev &> $HOME/hydra.log &
 
 export HYDRA_ADMIN_URL=http://127.0.0.1:4445
-nohup npm run start &> $HOME/consent.log &
+npm run start &> $HOME/consent.log &
 
 wait 10
 
@@ -22,7 +22,7 @@ client=$(hydra create client \
     --redirect-uri http://127.0.0.1:5555/callback)
 code_client_id=$(echo $client | jq -r '.client_id')
 code_client_secret=$(echo $client | jq -r '.client_secret')
-nohup hydra perform authorization-code \
+hydra perform authorization-code \
     --endpoint http://127.0.0.1:4444/ \
     --client-id "$code_client_id" \
     --client-secret "$code_client_secret" \
