@@ -15,3 +15,6 @@ urls:
     issuer: http://127.0.0.1:4444
   login: http://127.0.0.1:3000/login
   consent: http://127.0.0.1:3000/consent
+
+strategies:
+  access_token: jwt
